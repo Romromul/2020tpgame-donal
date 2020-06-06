@@ -5,11 +5,12 @@ program donalGame {
 	game.title('Donalsito')
 	game.width(15)
 	game.height(10)
-	game.boardGround("mapa.jpg")
+	game.boardGround("mapa.png")
 	
 	//VISUALES
 	game.addVisual(donal)
 	game.addVisual(dolar)
+	game.addVisual(jon)
 	game.showAttributes(donal)
 	
 	//TECLADO
@@ -21,7 +22,7 @@ program donalGame {
 
 	//COLISIONES
 	game.onCollideDo(donal, {algo => algo.teEncontro(donal)})
-	game.onTick(800, "Gravedad", {donal.caer(1)})
+	game.onTick(800, "GRAVEDAD", {donal.caer(1)})
 	
 	game.start()
 }

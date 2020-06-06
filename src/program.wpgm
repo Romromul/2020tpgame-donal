@@ -1,0 +1,27 @@
+import juego.*
+import wollok.game.*
+program donalGame {
+	//CONFIG
+	game.title('Donalsito')
+	game.width(15)
+	game.height(10)
+	game.boardGround("mapa.jpg")
+	
+	//VISUALES
+	game.addVisual(donal)
+	game.addVisual(dolar)
+	game.showAttributes(donal)
+	
+	//TECLADO
+	keyboard.h().onPressDo { game.say(donal, "Vamos por esos dolaritos!") }
+	keyboard.up().onPressDo { donal.move(donal.position().up(1)) }
+	keyboard.down().onPressDo { donal.move(donal.position().down(1)) }
+	keyboard.left().onPressDo { donal.move(donal.position().left(1)) }
+	keyboard.right().onPressDo { donal.move(donal.position().right(1)) }
+
+	//COLISIONES
+	game.onCollideDo(donal, {algo => algo.teEncontro(donal)})
+	game.onTick(800, "Gravedad", {donal.caer(1)})
+	
+	game.start()
+}

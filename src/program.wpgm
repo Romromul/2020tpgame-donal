@@ -1,28 +1,34 @@
 import juego.*
 import wollok.game.*
 program donalGame {
-	//CONFIG
-	game.title('Donalsito')
-	game.width(15)
-	game.height(10)
-	game.boardGround("mapa.png")
+    //CONFIG
+    game.title('Donalsito')
+    game.width(15)
+    game.height(10)
+    game.boardGround("mapa.png")
 	
-	//VISUALES
-	game.addVisual(donal)
-	game.addVisual(dolar)
-	game.addVisual(jon)
-	game.showAttributes(donal)
-	
-	//TECLADO
-	keyboard.h().onPressDo { game.say(donal, "Vamos por esos dolaritos!") }
-	keyboard.up().onPressDo { donal.move(donal.position().up(1)) }
-	keyboard.down().onPressDo { donal.move(donal.position().down(1)) }
-	keyboard.left().onPressDo { donal.move(donal.position().left(1)) }
-	keyboard.right().onPressDo { donal.move(donal.position().right(1)) }
+    //VISUALES
+    
+    game.addVisual(donal)
+    game.addVisual(dolar)
+    game.addVisual(coreano)
+    game.addVisual(chino)
+    game.addVisual(jon)
+    game.showAttributes(donal)
+    game.addVisual(coronavirus)
+    
+    //TECLADO
+    keyboard.h().onPressDo { game.say(donal, "Vamos por esos dolaritos!") }
+    keyboard.up().onPressDo { donal.move(donal.position().up(1)) }
+    keyboard.down().onPressDo { donal.move(donal.position().down(1)) }
+    keyboard.left().onPressDo { donal.move(donal.position().left(1)) }
+    keyboard.right().onPressDo { donal.move(donal.position().right(1)) }
+    keyboard.p().onPressDo{  game.say(donal, "Tengo" + " " +donal.dinero().toString()+" " + "dolares.") }
+    keyboard.v().onPressDo{  game.say(donal, "Tengo" + " " +donal.vida().toString()+" "+"vidas.") }
+    
+    //COLISIONES
+    game.onCollideDo(donal, {algo => algo.teEncontro(donal)})
+    game.onTick(800, "GRAVEDAD", {donal.caer(1)})
 
-	//COLISIONES
-	game.onCollideDo(donal, {algo => algo.teEncontro(donal)})
-	game.onTick(800, "GRAVEDAD", {donal.caer(1)})
-	
-	game.start()
+    game.start()
 }

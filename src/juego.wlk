@@ -5,7 +5,12 @@ object donal {
     var property dinero = 0
     var property vida = 10
     
-    method image() = "donalsito.png"
+    method image() {
+   		return if (self.position().y()==0)  
+			"donalsito-rojo.png"
+		else
+		   	 "donalsito.png"	
+    } 
     
     method move(nuevaPosicion) {
         self.position(nuevaPosicion)
@@ -18,7 +23,7 @@ object donal {
         }
         
     method caer(altura){
-        position = game.at(position.x(), 0.max(position.y()- altura))
+        position = game.at(position.x().limitBetween(1.5,20), (position.y()-altura).limitBetween(0,10))
     }
     
     method cantidadDolar() {
@@ -32,7 +37,7 @@ object donal {
     method perder() {
         game.say(jon, "PERDISTE EL MUNDO EXPLOTO!")
         self.terminar()
-        }
+     }
    
         
     method quitar(algo) {
@@ -90,7 +95,7 @@ object dolar {
  object jon {
      method image() = "jon.png"
      
-     method position() = game.at(donal.position().x(),0)
+     method position() = game.at(donal.position().x().min(13),0)
 
      method teEncontro(donal) {
         donal.perder()

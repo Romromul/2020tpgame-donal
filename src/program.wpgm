@@ -3,8 +3,8 @@ import wollok.game.*
 program donalGame {
     //CONFIG
     game.title('Donalsito')
-    game.width(15)
-    game.height(10)
+    game.width(25)
+    game.height(13)
     game.boardGround("mapa.png")
 	
     //VISUALES
@@ -16,6 +16,7 @@ program donalGame {
     game.addVisual(jon)
     game.showAttributes(donal)
     game.addVisual(coronavirus)
+    
     
     //TECLADO
     keyboard.h().onPressDo { game.say(donal, "Vamos por esos dolaritos!") }

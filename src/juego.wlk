@@ -31,7 +31,6 @@ object donal {
     }
     
     method cantidadVida() {
-    	//game.say(self, "Tengo " + self.vida() + " vidas!!")
     	if (vida==3){
     		vida1.aparecer()
     		vida2.aparecer()
@@ -82,6 +81,11 @@ object donal {
         game.removeTickEvent("GRAVEDAD")
         game.schedule(2 * 1000 , {game.stop()})
     }
+    method quitar1(algo) {
+        dinero = dinero-algo.dineroQueleSaca1()
+        self.cantidadDolar()
+        game.say(africanosBailarines, "PERDISTE DINERO, jajajaja")
+    }
 }
 
 object dolar {
@@ -116,7 +120,7 @@ object dolar {
  }
  
  object coreano{
-     var property position = game.at(11,5)
+     var property position = game.at(19,6)
      
      method image() = "coreano.png"
      
@@ -128,7 +132,7 @@ object dolar {
  }
  
 object chino{
-     var property position = game.at(12,6)
+     var property position = game.at(19,8)
      
      method image() = "chino2.png"
      
@@ -156,6 +160,21 @@ object coronavirus{
         donal.quitarVida(self)
     }
 }
+
+object africanosBailarines{
+    var property position = game.at(13,5)
+     method image() = "africanosQueBailan1.png"
+     method dineroQueleSaca1() = 1
+     method teEncontro(donal) {
+        donal.quitar1(self)
+    }
+}
+object torreTrump{
+    var property position = game.at(4,6)
+     method image() = "torre_trump.png"
+	method teEncontro(donal) {}
+}
+
 object vida1{
 	method position()=game.at(24,12)
 	method image()="corazon.png"

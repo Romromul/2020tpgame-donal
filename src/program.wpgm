@@ -8,7 +8,7 @@ program donalGame {
     game.boardGround("mapa.png")
 	
     //VISUALES
-    
+    game.addVisual(torreTrump)   
     game.addVisual(donal)
     game.addVisual(dolar)
     game.addVisual(coreano)
@@ -17,7 +17,7 @@ program donalGame {
     game.showAttributes(donal)
     game.addVisual(coronavirus)
     donal.cantidadVida()
-    
+	game.addVisual(africanosBailarines)    
     
     //TECLADO
     keyboard.h().onPressDo { game.say(donal, "Vamos por esos dolaritos!") }

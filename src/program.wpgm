@@ -16,6 +16,7 @@ program donalGame {
     game.addVisual(jon)
     game.showAttributes(donal)
     game.addVisual(coronavirus)
+    donal.cantidadVida()
     
     
     //TECLADO
@@ -30,6 +31,5 @@ program donalGame {
     //COLISIONES
     game.onCollideDo(donal, {algo => algo.teEncontro(donal)})
     game.onTick(800, "GRAVEDAD", {donal.caer(1)})
-
     game.start()
 }

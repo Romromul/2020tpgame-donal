@@ -3,7 +3,7 @@ import wollok.game.*
 object donal {
     var property position = game.at(10,10)
     var property dinero = 0
-    var property vida = 10
+    var property vida = 3
     
     method image() {
    		return if (self.position().y()==0)  
@@ -31,7 +31,21 @@ object donal {
     }
     
     method cantidadVida() {
-    	game.say(self, "Tengo " + self.vida() + " vidas!!")
+    	//game.say(self, "Tengo " + self.vida() + " vidas!!")
+    	if (vida==3){
+    		vida1.aparecer()
+    		vida2.aparecer()
+    		vida3.aparecer()    	
+    	}
+    	else{
+    		if (vida==2) { vida3.desaparecer()	}
+    		else{
+    			if (vida==1)	{vida2.desaparecer()}
+    			else{
+    				vida1.desaparecer()
+    			}
+    		}
+    	}
     }
 
     method perder() {
@@ -48,11 +62,10 @@ object donal {
     
     method quitarVida(algo) {
         vida = vida-algo.vidaQueleSaca()
-        game.say(coronavirus, "PERDISTE UNA VIDA, CUIDADO")
-  		self.cantidadVida()
+        game.say(coronavirus, "PERDISTE UNA VIDA, CUIDADO") 		
         coronavirus.mover()
-        if (vida<0)
-        	self.terminar()
+        if (vida<0)  {self.terminar()}
+        self.cantidadVida()
     }
     
     method leSaco50yquedaendeuda(algo) {
@@ -142,4 +155,36 @@ object coronavirus{
     method teEncontro(donal) {
         donal.quitarVida(self)
     }
+}
+object vida1{
+	method position()=game.at(24,12)
+	method image()="corazon.png"
+	method aparecer(){
+		game.addVisual(self)
+		}
+	method desaparecer(){
+		game.removeVisual(self)
+		}
+}
+
+object vida2{
+	method position()=game.at(23,12)
+	method image()="corazon.png"
+	method aparecer(){
+		game.addVisual(self)
+		}
+	method desaparecer(){
+		game.removeVisual(self)
+		}
+}
+
+object vida3{
+	method position()=game.at(22,12)
+	method image()="corazon.png"
+	method aparecer(){
+		game.addVisual(self)
+		}
+	method desaparecer(){
+		game.removeVisual(self)
+		}
 }

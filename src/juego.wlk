@@ -23,7 +23,7 @@ object donal {
         }
         
     method caer(altura){
-        position = game.at(position.x().limitBetween(1.5,20), (position.y()-altura).limitBetween(0,10))
+        position = game.at(position.x().limitBetween(1.5,23), (position.y()-altura).limitBetween(0,11))
     }
     
     method cantidadDolar() {
@@ -63,7 +63,7 @@ object donal {
         vida = vida-algo.vidaQueleSaca()
         game.say(coronavirus, "PERDISTE UNA VIDA, CUIDADO") 		
         coronavirus.mover()
-        if (vida<0)  {self.terminar()}
+        if (vida<=0)  {self.terminar()}
         self.cantidadVida()
     }
     
@@ -112,7 +112,7 @@ object dolar {
  object jon {
      method image() = "jon.png"
      
-     method position() = game.at(donal.position().x().min(13),0)
+     method position() = game.at(donal.position().x().min(25),0)
 
      method teEncontro(donal) {
         donal.perder()
@@ -184,6 +184,7 @@ object vida1{
 	method desaparecer(){
 		game.removeVisual(self)
 		}
+	method teEncontro(donal) {}
 }
 
 object vida2{
@@ -195,6 +196,7 @@ object vida2{
 	method desaparecer(){
 		game.removeVisual(self)
 		}
+		method teEncontro(donal) {}
 }
 
 object vida3{
@@ -206,4 +208,5 @@ object vida3{
 	method desaparecer(){
 		game.removeVisual(self)
 		}
+		method teEncontro(donal) {}
 }

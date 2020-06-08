@@ -1,4 +1,5 @@
 import wollok.game.*
+import interface.*
 
 object donal {
     var property position = game.at(10,10)
@@ -25,9 +26,20 @@ object donal {
     method caer(altura){
         position = game.at(position.x().limitBetween(1.5,23), (position.y()-altura).limitBetween(0,11))
     }
-    
+    method perder1() {
+        game.say(africanosBailarines, "PERDISTE EL MUNDO EXPLOTO Y VAMOS A BAILAR CON TU ATAUD!")
+        self.terminar()
+     }
     method cantidadDolar() {
-    	game.say(self, "Tengo " + self.dinero() + " dolares!!")
+    	cifra0.desaparecer()
+    	cifra1.desaparecer()
+    	cifra2.desaparecer()
+    	cifra3.desaparecer()
+    	cifra0.aparecer()
+    	cifra1.aparecer()
+    	cifra2.aparecer()
+    	cifra3.aparecer() 	
+    	//game.say(self, "Tengo " + self.dinero() + " dolares!!")
     }
     
     method cantidadVida() {
@@ -49,9 +61,9 @@ object donal {
 
     method perder() {
         game.say(jon, "PERDISTE EL MUNDO EXPLOTO!")
-        self.terminar()
+        game.schedule(1000, {game.sound("musiquita.mp3").play()})
+        game.onTick(10000, "muerto", {self.terminar()})
      }
-   
         
     method quitar(algo) {
         dinero = dinero-algo.dineroQueleSaca()
@@ -164,9 +176,8 @@ object coronavirus{
 object africanosBailarines{
     var property position = game.at(13,5)
      method image() = "africanosQueBailan1.png"
-     method dineroQueleSaca1() = 1
      method teEncontro(donal) {
-        donal.quitar1(self)
+        donal.perder1()
     }
 }
 object torreTrump{
@@ -175,38 +186,3 @@ object torreTrump{
 	method teEncontro(donal) {}
 }
 
-object vida1{
-	method position()=game.at(24,12)
-	method image()="corazon.png"
-	method aparecer(){
-		game.addVisual(self)
-		}
-	method desaparecer(){
-		game.removeVisual(self)
-		}
-	method teEncontro(donal) {}
-}
-
-object vida2{
-	method position()=game.at(23,12)
-	method image()="corazon.png"
-	method aparecer(){
-		game.addVisual(self)
-		}
-	method desaparecer(){
-		game.removeVisual(self)
-		}
-		method teEncontro(donal) {}
-}
-
-object vida3{
-	method position()=game.at(22,12)
-	method image()="corazon.png"
-	method aparecer(){
-		game.addVisual(self)
-		}
-	method desaparecer(){
-		game.removeVisual(self)
-		}
-		method teEncontro(donal) {}
-}

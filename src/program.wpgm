@@ -1,5 +1,6 @@
 import juego.*
 import wollok.game.*
+import interface.*
 program donalGame {
     //CONFIG
     game.title('Donalsito')
@@ -17,7 +18,12 @@ program donalGame {
     game.showAttributes(donal)
     game.addVisual(coronavirus)
     donal.cantidadVida()
-	game.addVisual(africanosBailarines)    
+    game.addVisual(signoPeso)
+	game.addVisual(africanosBailarines)
+	cifra0.aparecer()
+    cifra1.aparecer()
+   	cifra2.aparecer()
+   	cifra3.aparecer()   
     
     //TECLADO
     keyboard.h().onPressDo { game.say(donal, "Vamos por esos dolaritos!") }
@@ -30,6 +36,7 @@ program donalGame {
     
     //COLISIONES
     game.onCollideDo(donal, {algo => algo.teEncontro(donal)})
-    game.onTick(800, "GRAVEDAD", {donal.caer(1)})
+    game.onTick(700, "GRAVEDAD", {donal.caer(1)})
+    game.schedule(1000, {game.sound("ambiente.mp3").play()})
     game.start()
 }

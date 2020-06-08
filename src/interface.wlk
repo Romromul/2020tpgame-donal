@@ -1,4 +1,4 @@
-import juego.*
+import donal.*
 import wollok.game.*
 
 object vida1{
@@ -82,8 +82,8 @@ object cifra3{
 }
 object signoPeso{
 	method teEncontro(donal) {}
-	method image()="signoPeso.png"
-	method position()=game.at(20,11)
+	method image()="dolar.png"
+	method position()=game.at(21,11)
 }
 
 object string{ // 1

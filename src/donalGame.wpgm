@@ -1,0 +1,37 @@
+import wollok.game.*
+import donal.*
+
+import interface.*
+import extras.*
+import config.*
+
+program donalGame {
+    //PANTALLA
+    game.title('Donalsito')
+    game.width(25)
+    game.height(13)
+    game.boardGround("mapa.png")
+    
+    //VISUALES
+    game.addVisual(donal)
+    game.addVisual(dolar)
+    game.addVisual(coreano)
+    game.addVisual(chino)
+    game.addVisual(jon)
+    game.showAttributes(donal)
+    game.addVisual(coronavirus)
+    donal.cantidadVida()
+    game.addVisual(signoPeso)
+	game.addVisual(africanosBailarines)
+	game.addVisual(bomba)
+	cifra0.aparecer()
+    cifra1.aparecer()
+   	cifra2.aparecer()
+   	cifra3.aparecer()   
+   	
+   	//CONFIGURACIONES
+    config.configuracionDeTeclas()
+    config.colisiones()
+    game.start()
+}
+    

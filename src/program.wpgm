@@ -35,7 +35,7 @@ program donalGame {
     keyboard.right().onPressDo { donal.move(donal.position().right(1)) }
     keyboard.p().onPressDo{  game.say(donal, "Tengo" + " " +donal.dinero().toString()+" " + "dolares.") }
     keyboard.v().onPressDo{  game.say(donal, "Tengo" + " " +donal.vida().toString()+" "+"vidas.") }
-    keyboard.e().onPressDo{  game.say(donal, "Tengo" + " " +donal.elixir().toString()+" "+"elixir.") }
+    keyboard.e().onPressDo{  game.say(donal, "Tengo" + "  " +donal.elixir().toString()+" "+"elixir.") }
     
     //COLISIONES
     game.onCollideDo(donal, {algo => algo.teEncontro(donal)})

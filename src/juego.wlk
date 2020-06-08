@@ -5,7 +5,7 @@ object donal {
     var property position = game.at(10,10)
     var property dinero = 0
     var property vida = 3
-    
+    var property elixir = 0
     method image() {
    		return if (self.position().y()==0)  
 			"donalsito-rojo.png"
@@ -21,6 +21,7 @@ object donal {
         dinero = dinero + algo.dineroQueOtorga()
         self.cantidadDolar()
         dolar.mover()
+        dolar.mover1()
         }
         
     method caer(altura){
@@ -28,7 +29,8 @@ object donal {
     }
     method perder1() {
         game.say(africanosBailarines, "PERDISTE EL MUNDO EXPLOTO Y VAMOS A BAILAR CON TU ATAUD!")
-        self.terminar()
+        game.removeTickEvent("GRAVEDAD")
+        game.onTick(1000, "muerto", {self.terminar()})
      }
     method cantidadDolar() {
     	cifra0.desaparecer()
@@ -59,10 +61,11 @@ object donal {
     	}
     }
 
+
     method perder() {
-        game.say(jon, "PERDISTE EL MUNDO EXPLOTO!")
-        game.schedule(1000, {game.sound("musiquita.mp3").play()})
-        game.onTick(10000, "muerto", {self.terminar()})
+    	game.say(jon, "PERDISTE EL MUNDO EXPLOTO!")
+        game.removeTickEvent("GRAVEDAD")
+        game.onTick(1000, "muerto", {self.terminar()})
      }
         
     method quitar(algo) {
@@ -90,7 +93,6 @@ object donal {
     }
     
     method terminar() {
-        game.removeTickEvent("GRAVEDAD")
         game.schedule(2 * 1000 , {game.stop()})
     }
     method quitar1(algo) {
@@ -98,7 +100,23 @@ object donal {
         self.cantidadDolar()
         game.say(africanosBailarines, "PERDISTE DINERO, jajajaja")
     }
+
+method ganarElixir(algo){
+           elixir=elixir+algo.agregaElixirDeLaVida()
+        doctor.mover()
+        game.say(doctor, "ganaste un elixir para una nueva vida")
+    }
+    method ganarVida(){
+        if (elixir==3){return vida+1} else{return vida}
+    }
+ method perder2() {
+        game.say(bomba, "PERDISTE EL MUNDO EXPLOTO!")
+        game.removeTickEvent("GRAVEDAD")
+        game.onTick(1000, "muerto", {self.terminar()})
+     }
+ 
 }
+
 
 object dolar {
     var property position = game.at(1,1)
@@ -119,6 +137,12 @@ object dolar {
     method estaConJon() {
         return position == jon.position()
     }
+ method mover1() {const x = 1.randomUpTo(game.width()).truncate(0)
+        const y = 1.randomUpTo(game.height()).truncate(11) 
+        position = game.at(x,y)
+ 
+ }
+ 
  }
  
  object jon {
@@ -186,3 +210,26 @@ object torreTrump{
 	method teEncontro(donal) {}
 }
 
+object bomba{
+     method image() = "bomba1.png"
+
+     method position() = game.at(donal.position().x().min(25),12)
+
+     method teEncontro(donal) {
+        donal.perder2()
+    }
+ }
+// se cruzan los dolares con la bomba 
+object doctor{
+    var property position = game.at(5,5)
+    method agregaElixirDeLaVida() = 1
+    method image() = "doctor.png"
+    method mover() {
+        const x = 1.randomUpTo(game.width()).truncate(2)
+        const y = 1.randomUpTo(game.height()).truncate(2) 
+        position = game.at(x,y)
+    }
+        method teEncontro(donal) {
+        donal.ganarElixir(self)
+    }
+}

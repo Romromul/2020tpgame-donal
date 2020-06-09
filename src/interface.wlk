@@ -1,6 +1,10 @@
 import donal.*
 import wollok.game.*
 
+object fin{
+	method position()=game.at(8,1)
+	method image()='fin.png'
+}
 object vida1{
 	method position()=game.at(24,12)
 	method image()="corazon.png"

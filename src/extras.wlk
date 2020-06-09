@@ -9,18 +9,13 @@ object dolar {
     
     method dineroQueOtorga() = 1
     
-    method mover() {const x = 1.randomUpTo(game.width()).truncate(0)
-        const y = 1.randomUpTo(game.height()-1).truncate(0) 
+    method mover() {const x = 1.randomUpTo(game.width().min(24)).truncate(0)
+        const y = 1.randomUpTo(game.height().min(12)).truncate(0) 
         position = game.at(x,y)
     }
     
     method teEncontro(donal) {
         donal.recoger(self)
-    }
-    
-    method mover1() {const x = 1.randomUpTo(game.width()).truncate(0)
-        const y = 1.randomUpTo(game.height()).truncate(13) 
-        position = game.at(x,y)
     }
 }
  

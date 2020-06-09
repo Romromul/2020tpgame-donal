@@ -23,7 +23,6 @@ object donal { //PERSONAJE PRINCIPAL
         dinero = dinero + algo.dineroQueOtorga()
         self.cantidadDolar()
         dolar.mover()
-        dolar.mover1()
         }
         
     method caer(altura){ //GRAVEDAD
@@ -85,9 +84,9 @@ object donal { //PERSONAJE PRINCIPAL
        
      method terminar() {
      	game.removeTickEvent("GRAVEDAD")
-     	game.say(jon, "GAME OVER")
+     	game.addVisual(fin)
      	game.removeVisual(self)
-        game.schedule(2 * 700 , {game.stop()}) 
+        game.schedule(2000, {game.stop()}) 
     }
  
      // FALTA TERMINAR

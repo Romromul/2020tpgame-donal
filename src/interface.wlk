@@ -38,7 +38,23 @@ object vida3{
 	method desaparecer(){
 		game.removeVisual(self)
 		}
-		method teEncontro(donal) {}
+	method teEncontro(donal) {}
+}
+object elixir1{
+	method position()=game.at(23,12)
+	method image()="corazon1.png"
+}
+object elixir2{
+	method position()=game.at(23,12)
+	method image()="corazon2.png"
+}
+object elixir3{
+	method position()=game.at(22,12)
+	method image()="corazon1.png"
+}
+object elixir4{
+	method position()=game.at(22,12)
+	method image()="corazon2.png"
 }
 object cifra0{
 	method teEncontro(donal) {}

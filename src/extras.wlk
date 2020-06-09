@@ -62,7 +62,7 @@ object coronavirus{
     
     method mover() {
         const x = 1.randomUpTo(game.width()).truncate(2)
-        const y = 1.randomUpTo(game.height()).truncate(2) 
+        const y = 1.randomUpTo(game.height()-1).truncate(2) 
         position = game.at(x,y)
     }
     

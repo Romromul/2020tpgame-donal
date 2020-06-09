@@ -48,14 +48,28 @@ object donal { //PERSONAJE PRINCIPAL
     	if (vida==3){
     		if (!game.hasVisual(vida1)) {vida1.aparecer()}
     		if (!game.hasVisual(vida2)) {vida2.aparecer()}
-    		if (!game.hasVisual(vida3)) {vida3.aparecer()}   	
+    		if (!game.hasVisual(vida3)) {vida3.aparecer()} 
+    		if ( (game.hasVisual(elixir3)) and (game.hasVisual(elixir4)) ){
+    			game.removeVisual(elixir3)
+    			game.removeVisual(elixir4)
+    		} 	
     	}
     	else{
     		if (vida==2) { 
     			if (game.hasVisual(vida3)) {vida3.desaparecer()}
     			if (!game.hasVisual(vida2)) {vida2.aparecer()}
+    			if ( (game.hasVisual(elixir1)) and (game.hasVisual(elixir2)) ){
+    			game.removeVisual(elixir1)
+    			game.removeVisual(elixir2)
+    			}
+    			if (elixir==1){game.addVisual(elixir3)}
+    			if (elixir==2){game.addVisual(elixir4)}
     		}
     		else{
+    			if (vida==1){
+    				if (elixir==1){game.addVisual(elixir1)}
+    				if (elixir==2){game.addVisual(elixir2)}
+    				}
     			if ((vida==1) and (game.hasVisual(vida2))){vida2.desaparecer()}
     			else{
     				if (vida==0) {vida1.desaparecer()}

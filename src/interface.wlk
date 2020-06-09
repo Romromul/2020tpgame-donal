@@ -83,7 +83,7 @@ object cifra3{
 object signoPeso{
 	method teEncontro(donal) {}
 	method image()="dolar.png"
-	method position()=game.at(21,11)
+	method position()=game.at(20,11)
 }
 
 object string{ // 1
@@ -92,14 +92,20 @@ object string{ // 1
 		numeString=numero.toString()
 		if ((numero<10) and (numero>-1)){    
 											if (cifra==3){return numeString}
-											else {return 'nada'}
+											else {
+												if (cifra==2){return 'dolar'}
+												else {return 'nada'}
+											}
 		}
 		else{//6
 				if ((numero>-10) and (numero<0)){
 						if (cifra==3) {return numeString.charAt(1)}
 						else{
 							if (cifra==2) {return 'menos'}
-							else  {return 'nada'}
+							else  {
+									if (cifra==1) {return 'dolar'}
+									else {return 'nada'}
+							}
 						}
 				}
 				else{//7
@@ -107,7 +113,10 @@ object string{ // 1
 						if (cifra==3){return numeString.charAt(1)}
 						else{
 							if (cifra==2){return numeString.charAt(0)}
-							else{return 'nada'}
+							else{
+								if (cifra==1){return 'dolar'}
+								else{return 'nada'}
+							}
 						}
 					}
 					else{//5
@@ -117,7 +126,7 @@ object string{ // 1
 								if (cifra==2) {return numeString.charAt(1)}
 								else{
 									if (cifra==1){return 'menos'}
-									else{return 'nada'}
+									else{return 'dolar'}
 								}
 							}
 						}
@@ -128,7 +137,7 @@ object string{ // 1
 									if (cifra==2) {return numeString.charAt(1)}
 									else{
 										if (cifra==1){return numeString.charAt(0)}
-										else {return 'nada'}
+										else {return 'dolar'}
 									}
 								}
 							}

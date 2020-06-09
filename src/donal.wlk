@@ -31,6 +31,10 @@ object donal { //PERSONAJE PRINCIPAL
     }
     
     method cantidadDolar() { 
+    	if ((!game.hasVisual(signoPeso)) and (self.dinero()<-99)) {game.addVisual(signoPeso)}
+    	else{
+       		if ((game.hasVisual(signoPeso)) and (self.dinero()>-100)) {game.removeVisual(signoPeso)}       		
+       		}
     	cifra0.desaparecer()
     	cifra1.desaparecer()
     	cifra2.desaparecer()
@@ -68,6 +72,7 @@ object donal { //PERSONAJE PRINCIPAL
     
     method pierde10(algo) {
         dinero = dinero-algo.leSaco10()
+        self.cantidadDolar()
         game.say(chino,"Has perdido 10 dolares")
     }
     

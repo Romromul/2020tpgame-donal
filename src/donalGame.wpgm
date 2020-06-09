@@ -21,7 +21,6 @@ program donalGame {
     game.showAttributes(donal)
     game.addVisual(coronavirus)
     donal.cantidadVida()
-    game.addVisual(signoPeso)
 	game.addVisual(africanosBailarines)
 	game.addVisual(bomba)
 	cifra0.aparecer()

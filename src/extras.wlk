@@ -10,7 +10,7 @@ object dolar {
     method dineroQueOtorga() = 1
     
     method mover() {const x = 1.randomUpTo(game.width()).truncate(0)
-        const y = 1.randomUpTo(game.height()).truncate(0) 
+        const y = 1.randomUpTo(game.height()-1).truncate(0) 
         position = game.at(x,y)
     }
     

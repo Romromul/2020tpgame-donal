@@ -92,17 +92,19 @@ object bomba{
  }
  
 // FALTA TERMINAR
-//object doctor{
-//    var property position = game.at(5,5)
-//    method agregaElixirDeLaVida() = 1
-//    method image() = "doctor.png"
-//    method mover() {
-//        const x = 1.randomUpTo(game.width()).truncate(2)
-//        const y = 1.randomUpTo(game.height()).truncate(2) 
-//        position = game.at(x,y)
-//    }
-//        method teEncontro(donal) {
-//        donal.ganarElixir(self)
-//    }
-//}
+object doctor{
+    var property position = game.at(5,5)
+    //method agregaElixirDeLaVida() = 1
+    method image() = "doctor.png"
+    method mover() {
+        const x = 1.randomUpTo(game.width()).truncate(2)
+        const y = 1.randomUpTo(game.height()-1).truncate(2) 
+        position = game.at(x,y)
+    }
+        method teEncontro(donal) {
+        donal.ganarElixir()
+        donal.ganarVida()
+        donal.cantidadVida()
+    }
+}
 

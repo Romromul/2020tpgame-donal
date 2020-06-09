@@ -46,16 +46,19 @@ object donal { //PERSONAJE PRINCIPAL
     
     method cantidadVida() {
     	if (vida==3){
-    		vida1.aparecer()
-    		vida2.aparecer()
-    		vida3.aparecer()    	
+    		if (!game.hasVisual(vida1)) {vida1.aparecer()}
+    		if (!game.hasVisual(vida2)) {vida2.aparecer()}
+    		if (!game.hasVisual(vida3)) {vida3.aparecer()}   	
     	}
     	else{
-    		if (vida==2) { vida3.desaparecer()	}
+    		if (vida==2) { 
+    			if (game.hasVisual(vida3)) {vida3.desaparecer()}
+    			if (!game.hasVisual(vida2)) {vida2.aparecer()}
+    		}
     		else{
-    			if (vida==1)	{vida2.desaparecer()}
+    			if ((vida==1) and (game.hasVisual(vida2))){vida2.desaparecer()}
     			else{
-    				vida1.desaparecer()
+    				if (vida==0) {vida1.desaparecer()}
     			}
     		}
     	}
@@ -90,15 +93,18 @@ object donal { //PERSONAJE PRINCIPAL
     }
  
      // FALTA TERMINAR
-//	method ganarElixir(algo){
-//           elixir=elixir+algo.agregaElixirDeLaVida()
-//        doctor.mover()
-//        game.say(doctor, "ganaste un elixir para una nueva vida")
-//    }
-//    
-//    method ganarVida(){
-//        if (elixir==3){return vida+1} else{return vida}
-//    }
+	method ganarElixir(){
+        if (vida<3) {elixir=elixir+1}
+        doctor.mover()
+        game.say(doctor, "ganaste un elixir para una nueva vida ")
+    }
+    
+    method ganarVida(){
+        if ((elixir==3) and (vida<3)) {
+        	vida=vida+1
+        	elixir=0
+        }
+    }
  
 }
 

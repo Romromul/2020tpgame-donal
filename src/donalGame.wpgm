@@ -23,6 +23,7 @@ program donalGame {
     donal.cantidadVida()
 	game.addVisual(africanosBailarines)
 	game.addVisual(bomba)
+	game.addVisual(doctor)
 	cifra0.aparecer()
     cifra1.aparecer()
    	cifra2.aparecer()

@@ -24,6 +24,7 @@ program donalGame {
 	game.addVisual(africanosBailarines)
 	game.addVisual(bomba)
 	game.addVisual(doctor)
+	torreTrump.aparecer()
 	cifra0.aparecer()
     cifra1.aparecer()
    	cifra2.aparecer()

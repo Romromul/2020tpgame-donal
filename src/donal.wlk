@@ -109,6 +109,12 @@ object donal { //PERSONAJE PRINCIPAL
     	elixir=elixir-algo.elixirQueleSaca()
     	game.say(africanosBailarines,"Perdiste elixir para obtener VIDA")
     }
+    method ganarPlata(algo){
+    	dinero=dinero+algo.plata()
+    	if(dinero==50){
+    	if (!game.hasVisual(torreTrump)) {torreTrump.aparecer()}}
+    	else  {torreTrump.desaparecer()}
+    }
 }
 
 

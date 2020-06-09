@@ -91,7 +91,6 @@ object bomba{
         donal.terminar()
     }
  }
- 
 
 object doctor{
     var property position = game.at(5,5)
@@ -107,5 +106,20 @@ object doctor{
         donal.ganarVida()
         donal.cantidadVida()
     }
+}
+
+object torreTrump{
+    var property position = game.at(4,6)
+    method image()= "torre_trump.png"
+    method plata() = 50
+    method aparecer(){
+    	game.addVisual(self)
+    }
+	method desaparecer(){
+		game.removeVisual(self)
+	}
+	method teEncontro(donal) {
+		donal.ganarPlata(self)
+	}
 }
 

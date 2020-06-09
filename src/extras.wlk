@@ -73,11 +73,12 @@ object coronavirus{
 
 object africanosBailarines{
     var property position = game.at(13,5)
-     
-     method image() = "africanosQueBailan1.png"
+    
+    method elixirQueleSaca()=1
+    method image() = "africanosQueBailan1.png"
      
      method teEncontro(donal) {
-        donal.terminar()
+        donal.quitarElixir(self)
     }
 }
 
@@ -91,7 +92,7 @@ object bomba{
     }
  }
  
-// FALTA TERMINAR
+
 object doctor{
     var property position = game.at(5,5)
     //method agregaElixirDeLaVida() = 1

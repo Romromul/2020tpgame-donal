@@ -77,7 +77,7 @@ object donal { //PERSONAJE PRINCIPAL
         self.cantidadDolar()
         game.say(chino,"Has perdido 10 dolares")
     }
-    
+   
     
      method quitar(algo) {
         dinero = dinero-algo.dineroQueleSaca()
@@ -105,7 +105,10 @@ object donal { //PERSONAJE PRINCIPAL
         	elixir=0
         }
     }
- 
+     method quitarElixir(algo){
+    	elixir=elixir-algo.elixirQueleSaca()
+    	game.say(africanosBailarines,"Perdiste elixir para obtener VIDA")
+    }
 }
 
 

@@ -6,6 +6,7 @@ import extras.*
 import config.*
 
 program donalGame {
+	
     //PANTALLA
     game.title('Donalsito')
     game.width(25)

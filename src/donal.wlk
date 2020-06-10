@@ -45,6 +45,12 @@ object donal { //PERSONAJE PRINCIPAL
     }
     
     method cantidadVida() {
+    	if (elixir==0){
+    		if (game.hasVisual(elixir1)){game.removeVisual(elixir1)}
+    		if (game.hasVisual(elixir2)){game.removeVisual(elixir2)}
+    		if (game.hasVisual(elixir3)){game.removeVisual(elixir3)}
+    		if (game.hasVisual(elixir4)){game.removeVisual(elixir4)}
+    	}
     	if (vida==3){
     		if (!game.hasVisual(vida1)) {vida1.aparecer()}
     		if (!game.hasVisual(vida2)) {vida2.aparecer()}
@@ -67,6 +73,8 @@ object donal { //PERSONAJE PRINCIPAL
     		}
     		else{
     			if (vida==1){
+    				if (game.hasVisual(elixir3)){game.removeVisual(elixir3)}
+    				if (game.hasVisual(elixir4)){game.removeVisual(elixir4)}
     				if (elixir==1){game.addVisual(elixir1)}
     				if (elixir==2){game.addVisual(elixir2)}
     				}
@@ -119,8 +127,9 @@ object donal { //PERSONAJE PRINCIPAL
         	elixir=0
         }
     }
-     method quitarElixir(algo){
-    	elixir=elixir-algo.elixirQueleSaca()
+     method quitarElixir(){
+    	elixir=0
+    	self.cantidadVida()
     	game.say(africanosBailarines,"Perdiste elixir para obtener VIDA")
     }
     method ganarPlata(algo){

@@ -78,7 +78,7 @@ object africanosBailarines{
     method image() = "africanosQueBailan1.png"
      
      method teEncontro(donal) {
-        donal.quitarElixir(self)
+        donal.quitarElixir()
     }
 }
 
@@ -94,7 +94,6 @@ object bomba{
 
 object doctor{
     var property position = game.at(5,5)
-    //method agregaElixirDeLaVida() = 1
     method image() = "doctor.png"
     method mover() {
         const x = 1.randomUpTo(game.width()).truncate(2)

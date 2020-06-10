@@ -7,6 +7,7 @@ object donal { //PERSONAJE PRINCIPAL
     var property dinero = 0
     var property vida = 3
     var property elixir = 0
+    var property cuarentena=false
     
     method image() {
    		return if (self.position().y()==0)  
@@ -26,7 +27,7 @@ object donal { //PERSONAJE PRINCIPAL
         }
         
     method caer(altura){ //GRAVEDAD
-        position = game.at(position.x().limitBetween(1.5,23), (position.y()-altura).limitBetween(0,11))
+        if (!cuarentena) {position = game.at(position.x().limitBetween(1.5,23), (position.y()-altura).limitBetween(0,11))}
     }
     
     method cantidadDolar() { 

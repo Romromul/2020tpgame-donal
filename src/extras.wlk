@@ -121,4 +121,12 @@ object torreTrump{
 		donal.ganarPlata(self)
 	}
 }
-
+object alberto{
+	method position()=game.at(8,2)
+	method image()="alberto.png"
+	method teEncontro(donal){
+		donal.cuarentena(true)
+		game.say(self, "Entraste en cuarentena")
+		game.schedule(3000,{donal.cuarentena(false)})
+	}
+}

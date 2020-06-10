@@ -100,12 +100,17 @@ object donal { //PERSONAJE PRINCIPAL
         self.cantidadDolar()
         game.say(chino,"Has perdido 10 dolares")
     }
-   
     
      method quitar(algo) {
         dinero = dinero-algo.dineroQueleSaca()
         self.cantidadDolar()
         game.say(coreano, "PERDISTE DINERO, jajajaja")
+    }
+    
+    method quitarVida1(algo) {
+        vida = vida-algo.vidaQueleSaca()
+        self.cantidadVida()
+        game.say(putin, "SUERTE PARA LA PROXIMA")
     }
        
      method terminar() {
@@ -135,9 +140,23 @@ object donal { //PERSONAJE PRINCIPAL
     }
     method ganarPlata(algo){
     	dinero=dinero+algo.plata()
-    	if(dinero==50){
+    	if(dinero==30){
     	if (!game.hasVisual(torreTrump)) {torreTrump.aparecer()}}
     	else  {torreTrump.desaparecer()}
+    }
+    method ganarPlata1(algo){
+    	dinero=dinero+algo.plata1()
+    	game.say(bolsonaro, "Sopa do macaco, uma delicia")
+    	if(dinero==30){
+    	if (!game.hasVisual(bolsonaro)) {bolsonaro.aparecer()}}
+    	else  {bolsonaro.desaparecer()}
+    }
+    method ganarPlata2(algo){
+    	dinero=dinero+algo.plata2()
+    	game.say(britanico, "BREXIT is good")
+    	if(dinero==30){
+    	if (!game.hasVisual(britanico)) {britanico.aparecer()}}
+    	else  {britanico.desaparecer()}
     }
 }
 

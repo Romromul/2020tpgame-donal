@@ -4,7 +4,9 @@ import extras.*
 
 object fin{
 	method position()=game.at(8,1)
+	
 	method image()='fin.png'
+	
 	method continuar(){
 		game.onTick(700, "GRAVEDAD", { donal.caer(1)})
 		donal.vida(3)
@@ -19,117 +21,165 @@ object fin{
 		dolar.position(game.at(1,1))
 		coronavirus.position(game.at(9,9))
 		doctor.position(game.at(7,7))
-		game.removeVisual(self)
-		
+		game.removeVisual(self)	
 	}
 }
+
 object vida1{
 	method position()=game.at(24,12)
+	
 	method image()="corazon.png"
+	
 	method aparecer(){
 		game.addVisual(self)
-		}
+	}
+		
 	method desaparecer(){
 		game.removeVisual(self)
-		}
+	}
+		
 	method teEncontro(donal) {}
 }
 
 object vida2{
 	method position()=game.at(23,12)
+	
 	method image()="corazon.png"
+	
 	method aparecer(){
 		game.addVisual(self)
-		}
+	}
+		
 	method desaparecer(){
 		game.removeVisual(self)
-		}
-		method teEncontro(donal) {}
+	}
+	
+	method teEncontro(donal) {}
 }
 
 object vida3{
 	method position()=game.at(22,12)
+	
 	method image()="corazon.png"
+	
 	method aparecer(){
 		game.addVisual(self)
-		}
+	}
+		
 	method desaparecer(){
 		game.removeVisual(self)
-		}
+	}
+	
 	method teEncontro(donal) {}
 }
+
 object elixir1{
 	method position()=game.at(23,12)
+	
 	method image()="corazon1.png"
+	
 	method teEncontro(donal) {}
 }
+
 object elixir2{
 	method position()=game.at(23,12)
+	
 	method image()="corazon2.png"
+	
 	method teEncontro(donal) {}
 }
+	
 object elixir3{
 	method position()=game.at(22,12)
+	
 	method image()="corazon1.png"
+	
 	method teEncontro(donal) {}
 }
+	
 object elixir4{
 	method position()=game.at(22,12)
+	
 	method image()="corazon2.png"
+	
 	method teEncontro(donal) {}
 }
+
 object cifra0{
 	method teEncontro(donal) {}
+	
 	method image()= string.nume(donal.dinero(),0) + '.png'
+	
 	method position()=game.at(21,11)
+	
 	method aparecer(){
 		game.addVisual(self)
 	}
+	
 	method desaparecer(){
 		game.removeVisual(self)
 	}
 }
+
 object cifra1{
 	method teEncontro(donal) {}
+	
 	method image()= string.nume(donal.dinero(),1) + '.png'
+	
 	method position()=game.at(22,11)
+	
 	method aparecer(){
 		game.addVisual(self)
 	}
+	
 	method desaparecer(){
 		game.removeVisual(self)
 	}
 }
+
 object cifra2{
 	method teEncontro(donal) {}
+	
 	method image()= string.nume(donal.dinero(),2) + '.png'
+	
 	method position()=game.at(23,11)
+	
 	method aparecer(){
 		game.addVisual(self)
 	}
+	
 	method desaparecer(){
 		game.removeVisual(self)
 	}
 }
+
 object cifra3{
 	method teEncontro(donal) {}
+	
 	method image()= string.nume(donal.dinero(),3) + '.png'
+	
 	method position()=game.at(24,11)
+	
 	method aparecer(){
 		game.addVisual(self)
 	}
+	
 	method desaparecer(){
 		game.removeVisual(self)
 	}
 }
+
 object signoPeso{
 	method teEncontro(donal) {}
+	
 	method image()="dolar.png"
+	
 	method position()=game.at(20,11)
 }
 
 object string{ 
 	var numeString=''
+	
 	method nume(numero,cifra){ //2
 		numeString=numero.toString()
 		if ((numero<10) and (numero>-1)){    

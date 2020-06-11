@@ -108,9 +108,9 @@ object donal { //PERSONAJE PRINCIPAL
         dinero = dinero-algo.dineroQueleSaca()
         self.cantidadDolar()
         game.say(coreano, "PERDISTE DINERO, jajajaja")
-    }
+     }
     
-    method quitarVidaPutin(algo) {
+     method quitarVidaPutin(algo) {
         vida = vida-algo.vidaQueleSaca()
         game.say(putin, "SUERTE PARA LA PROXIMA")
         if (vida<=0)  {
@@ -118,50 +118,54 @@ object donal { //PERSONAJE PRINCIPAL
         	game.removeTickEvent("GRAVEDAD")
         }
         self.cantidadVida()
-    }
+     }
        
      method terminar() {   	
      	game.removeVisual(self)
         game.schedule(2000, {game.stop()})
-    }
+     }
  
-	method ganarElixir(){
+	 method ganarElixir(){
         if (vida<3) {elixir=elixir+1}
         doctor.mover()
         game.say(doctor, "ganaste un elixir para una nueva vida ")
-    }
+     }
     
-    method ganarVida(){
+     method ganarVida(){
         if ((elixir==3) and (vida<3)) {
         	vida=vida+1
         	elixir=0
         }
-    }
+     }
+    
      method quitarElixir(){
     	elixir=0
     	self.cantidadVida()
     	game.say(africanosBailarines,"Perdiste elixir para obtener VIDA")
-    }
-    method ganarPlata(algo){
+     }
+    
+     method ganarPlata(algo){
     	dinero=dinero+algo.plata()
     	if(dinero==30){
     	if (!game.hasVisual(torreTrump)) {torreTrump.aparecer()}}
     	else  {torreTrump.desaparecer()}
-    }
-    method ganarPlata1(algo){
+     }
+    
+     method ganarPlata1(algo){
     	dinero=dinero+algo.plata1()
     	game.say(bolsonaro, "Sopa do macaco, uma delicia")
     	if(dinero==30){
     	if (!game.hasVisual(bolsonaro)) {bolsonaro.aparecer()}}
-    	else  {game.schedule(500,{bolsonaro.desaparecer()})}
-    }
-    method ganarPlata2(algo){
+    	else  {bolsonaro.desaparecer()}
+     }
+    
+     method ganarPlata2(algo){
     	dinero=dinero+algo.plata2()
     	game.say(britanico, "BREXIT is good")
     	if(dinero==30){
     	if (!game.hasVisual(britanico)) {britanico.aparecer()}}
-    	else  {game.schedule(500,{britanico.desaparecer()})}
-    }
+    	else  {britanico.desaparecer()}
+     }
 }
 
 

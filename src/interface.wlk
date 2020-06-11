@@ -1,9 +1,26 @@
 import donal.*
 import wollok.game.*
+import extras.*
 
 object fin{
 	method position()=game.at(8,1)
 	method image()='fin.png'
+	method continuar(){
+		game.onTick(700, "GRAVEDAD", { donal.caer(1)})
+		donal.vida(3)
+		donal.elixir(0)
+		donal.dinero(0)
+		donal.position(game.at(10,10))
+		donal.cantidadVida()
+		donal.cantidadDolar()		
+		if (!game.hasVisual(torreTrump)) {torreTrump.aparecer()}
+		if (!game.hasVisual(bolsonaro)) {bolsonaro.aparecer()}
+		dolar.position(game.at(1,1))
+		coronavirus.position(game.at(9,9))
+		doctor.position(game.at(7,7))
+		game.removeVisual(self)
+		
+	}
 }
 object vida1{
 	method position()=game.at(24,12)
@@ -43,18 +60,22 @@ object vida3{
 object elixir1{
 	method position()=game.at(23,12)
 	method image()="corazon1.png"
+	method teEncontro(donal) {}
 }
 object elixir2{
 	method position()=game.at(23,12)
 	method image()="corazon2.png"
+	method teEncontro(donal) {}
 }
 object elixir3{
 	method position()=game.at(22,12)
 	method image()="corazon1.png"
+	method teEncontro(donal) {}
 }
 object elixir4{
 	method position()=game.at(22,12)
 	method image()="corazon2.png"
+	method teEncontro(donal) {}
 }
 object cifra0{
 	method teEncontro(donal) {}
@@ -106,7 +127,7 @@ object signoPeso{
 	method position()=game.at(20,11)
 }
 
-object string{ // 1
+object string{ 
 	var numeString=''
 	method nume(numero,cifra){ //2
 		numeString=numero.toString()
@@ -117,7 +138,7 @@ object string{ // 1
 												else {return 'nada'}
 											}
 		}
-		else{//6
+		else{
 				if ((numero>-10) and (numero<0)){
 						if (cifra==3) {return numeString.charAt(1)}
 						else{
@@ -128,7 +149,7 @@ object string{ // 1
 							}
 						}
 				}
-				else{//7
+				else{
 					if ((numero>9) and (numero<100)){
 						if (cifra==3){return numeString.charAt(1)}
 						else{
@@ -139,7 +160,7 @@ object string{ // 1
 							}
 						}
 					}
-					else{//5
+					else{
 						if ((numero<-9) and (numero>-100)){
 							if (cifra==3){return numeString.charAt(2)}
 							else{
@@ -150,7 +171,7 @@ object string{ // 1
 								}
 							}
 						}
-						else{//4
+						else{
 							if ((numero>99) and (numero<1000)){
 								if (cifra==3) {return numeString.charAt(2)}
 								else{
@@ -161,7 +182,7 @@ object string{ // 1
 									}
 								}
 							}
-							else{//3
+							else{
 								if (cifra==3) {return numeString.charAt(3)}
 								else{
 									if (cifra==2) {return numeString.charAt(2)}
@@ -170,10 +191,10 @@ object string{ // 1
 										else {return 'menos'}
 									}
 								}
-							}//3
-						}//4
-					}//5
-				}//7
-			}//6
-		} //2
-} //1
+							}
+						}
+					}
+				}
+			}
+		} 
+} 

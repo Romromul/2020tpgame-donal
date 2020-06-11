@@ -14,11 +14,14 @@ object config {
     		keyboard.p().onPressDo{  game.say(donal, "Tengo" + " " +donal.dinero().toString()+" " + "dolares.") }
     		keyboard.v().onPressDo{  game.say(donal, "Tengo" + " " +donal.vida().toString()+" "+"vidas.") }
     		keyboard.e().onPressDo{  game.say(donal, "Tengo" + " " +donal.elixir().toString()+" "+"elixir.") }
+    		keyboard.y().onPressDo{ if (game.hasVisual(fin)) {fin.continuar()} }
+    		keyboard.n().onPressDo{ if (game.hasVisual(fin)) {donal.terminar()} }
 		}
 		
 		method colisiones() {
 			game.onCollideDo(donal, {algo => algo.teEncontro(donal)})
     		game.onTick(700, "GRAVEDAD", { donal.caer(1)})
-    		game.schedule(700, {game.sound("ambiente.mp3").play()})
+    		game.schedule(1000,{ game.sound("ambiente.mp3").play() game.onTick(149000,"musica", {game.sound("ambiente.mp3").play()})})
+    		
 			}
 }

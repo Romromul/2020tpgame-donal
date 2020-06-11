@@ -19,7 +19,8 @@ object jon {
      method image() = "jon.png" 
      method position() = game.at(donal.position().x().min(25),0)
      method teEncontro(donal) {
-        donal.terminar()
+          game.addVisual(fin)
+          game.removeTickEvent("GRAVEDAD")
     }
 }
  
@@ -46,8 +47,8 @@ object coronavirus{
     method vidaQueleSaca() = 1
     method image() = "coronavirus.png"
     method mover() {
-        const x = 1.randomUpTo(game.width()).truncate(2)
-        const y = 1.randomUpTo(game.height()-1).truncate(2) 
+        const x = 1.randomUpTo(game.width()).truncate(0)
+        const y = 1.randomUpTo(game.height()-1).truncate(0) 
         position = game.at(x,y)
     }
     
@@ -69,7 +70,8 @@ object bomba{
      method image() = "bomba1.png"
      method position() = game.at(donal.position().x().min(24),12)
      method teEncontro(donal) {
-        donal.terminar()
+          game.addVisual(fin)
+          game.removeTickEvent("GRAVEDAD")
     }
  }
 
@@ -132,9 +134,7 @@ object putin{
 	method position()=game.at(15,8)
 	method image()="putin.png"
 	method vidaQueleSaca()=1
-	     method teEncontro(donal) {
-        donal.quitarVida1(self)
-    }
+	method teEncontro(donal) { donal.quitarVidaPutin(self) }
 }
 
 object muro{
@@ -150,7 +150,7 @@ object muro{
 object angela{
 	method position()=game.at(12,7)
 	method image()="angelaMerkel.png"
-	method teEncontro(donal){
+	method teEncontro(donal){donal.dinero(0)
 	}
 }
 

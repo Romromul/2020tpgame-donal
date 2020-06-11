@@ -91,7 +91,10 @@ object donal { //PERSONAJE PRINCIPAL
         vida = vida-algo.vidaQueleSaca()
         game.say(coronavirus, "PERDISTE UNA VIDA, CUIDADO") 		
         coronavirus.mover()
-        if (vida<=0)  {self.terminar()}
+        if (vida<=0) { 	
+        	game.removeTickEvent("GRAVEDAD")
+        	game.addVisual(fin)
+        }
         self.cantidadVida()
     }
     
@@ -107,20 +110,21 @@ object donal { //PERSONAJE PRINCIPAL
         game.say(coreano, "PERDISTE DINERO, jajajaja")
     }
     
-    method quitarVida1(algo) {
+    method quitarVidaPutin(algo) {
         vida = vida-algo.vidaQueleSaca()
-        self.cantidadVida()
         game.say(putin, "SUERTE PARA LA PROXIMA")
+        if (vida<=0)  {
+        	game.addVisual(fin)
+        	game.removeTickEvent("GRAVEDAD")
+        }
+        self.cantidadVida()
     }
        
-     method terminar() {
-     	game.removeTickEvent("GRAVEDAD")
-     	game.addVisual(fin)
+     method terminar() {   	
      	game.removeVisual(self)
-        game.schedule(2000, {game.stop()}) 
+        game.schedule(2000, {game.stop()})
     }
  
-     // FALTA TERMINAR
 	method ganarElixir(){
         if (vida<3) {elixir=elixir+1}
         doctor.mover()
@@ -149,14 +153,14 @@ object donal { //PERSONAJE PRINCIPAL
     	game.say(bolsonaro, "Sopa do macaco, uma delicia")
     	if(dinero==30){
     	if (!game.hasVisual(bolsonaro)) {bolsonaro.aparecer()}}
-    	else  {bolsonaro.desaparecer()}
+    	else  {game.schedule(500,{bolsonaro.desaparecer()})}
     }
     method ganarPlata2(algo){
     	dinero=dinero+algo.plata2()
     	game.say(britanico, "BREXIT is good")
     	if(dinero==30){
     	if (!game.hasVisual(britanico)) {britanico.aparecer()}}
-    	else  {britanico.desaparecer()}
+    	else  {game.schedule(500,{britanico.desaparecer()})}
     }
 }
 

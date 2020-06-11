@@ -1,6 +1,5 @@
 import wollok.game.*
 import donal.*
-
 import interface.*
 import extras.*
 import config.*

@@ -19,8 +19,9 @@ object jon {
      method image() = "jon.png" 
      method position() = game.at(donal.position().x().min(25),0)
      method teEncontro(donal) {
-          game.addVisual(fin)
           game.removeTickEvent("GRAVEDAD")
+          game.addVisual(fin)
+          
     }
 }
  

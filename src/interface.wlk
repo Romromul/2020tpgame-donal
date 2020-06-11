@@ -12,9 +12,10 @@ object fin{
 		donal.dinero(0)
 		donal.position(game.at(10,10))
 		donal.cantidadVida()
-		donal.cantidadDolar()		
+		donal.cantidadDolar()	
 		if (!game.hasVisual(torreTrump)) {torreTrump.aparecer()}
 		if (!game.hasVisual(bolsonaro)) {bolsonaro.aparecer()}
+		if (!game.hasVisual(britanico)) {britanico.aparecer()}
 		dolar.position(game.at(1,1))
 		coronavirus.position(game.at(9,9))
 		doctor.position(game.at(7,7))

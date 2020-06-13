@@ -1,14 +1,14 @@
 # ¡Donal y sus dolaritos! 
 
 ## Juego realizado con la biblioteca Wollok Game
-![](https://i.ibb.co/6y240L7/presentacion.jpg)
+![](https://i.ibb.co/6y240L7/presentacion.jpg) ![](https://i.ibb.co/L1HbFjw/mapa-1.png)
 ### Resumen: 
 El juego se basa en un personaje llamado "Donal" que va montado en su paloma azul recorriendo el mundo en busca de dólares o como él los llama "dolaritos". Hay que ayudarlo a recoger la mayor cantidad sin ser atrapado por Jon (su enemigo N°1).
 
 
 ### Instrucciones: 
 Mueve a Donal con las flechas de tu teclado para recorrer el mundo.
-Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán perder. Por suerte tendrás un médico:
+Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán perder. Por suerte tendrás un médico que te dará elixir:
 
 ![](https://i.ibb.co/CKvLJmh/doctor.png) x3 = 1 vida extra (Lo máximo son 3 vidas)
 
@@ -16,7 +16,7 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
   1) ![](https://i.ibb.co/dJ5KcLQ/bomba1.png)
   Si subes mucho te puedes cruzar con la bomba y explotaras.
   2) ![](https://i.ibb.co/r49HMV6/africanos-Que-Bailan1.png)
-  Ten cuidado al pasar por Africa puedes perder los médicos que tengas.
+  Ten cuidado al pasar por Africa perderas el elixir que tengas acumulado para una nueva vida.
   3) ![](https://i.ibb.co/QPQ0wbH/coronavirus.png)
   Si tocas al coronavirus pierdes 1 vida.
   4) ![](https://i.ibb.co/12k28XF/chino2.png) ![](https://i.ibb.co/x2HGzX3/coreano.png)
@@ -43,7 +43,7 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
 
 ### Acerca de:
 
-Autores: Franco Hilt, Lautaro Suarez, Evelyn Kesler, Hernan Prego, Nazareno Grieco.
+Autores: Franco Hilt, Nazareno Grieco, Evelyn Kesler, Hernan Prego, Lautaro Suarez.
 
 Docente/Curso/Institución: Lucas Spigariol / Paradigmas de Programación / UTN - FRD
 

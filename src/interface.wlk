@@ -2,7 +2,17 @@ import donal.*
 import wollok.game.*
 import extras.*
 
+class CambiarEstado {
+	
+	method aparecer() {game.addVisual(self)}
+	
+	method desaparecer(){game.removeVisual(self)}
+	
+	method teEncontro(donal) {}
+}
+
 object fin{
+	
 	method position()=game.at(8,1)
 	
 	method image()='fin.png'
@@ -25,55 +35,14 @@ object fin{
 	}
 }
 
-object vida1{
-	method position()=game.at(24,12)
-	
-	method image()="corazon.png"
-	
-	method aparecer(){
-		game.addVisual(self)
-	}
-		
-	method desaparecer(){
-		game.removeVisual(self)
-	}
-		
-	method teEncontro(donal) {}
-}
+object vida1 inherits CambiarEstado  {method position()=game.at(24,12) method image()="corazon.png"}
 
-object vida2{
-	method position()=game.at(23,12)
-	
-	method image()="corazon.png"
-	
-	method aparecer(){
-		game.addVisual(self)
-	}
-		
-	method desaparecer(){
-		game.removeVisual(self)
-	}
-	
-	method teEncontro(donal) {}
-}
+object vida2 inherits CambiarEstado  {method position()=game.at(23,12) method image()="corazon.png"}
 
-object vida3{
-	method position()=game.at(22,12)
-	
-	method image()="corazon.png"
-	
-	method aparecer(){
-		game.addVisual(self)
-	}
-		
-	method desaparecer(){
-		game.removeVisual(self)
-	}
-	
-	method teEncontro(donal) {}
-}
+object vida3 inherits CambiarEstado  {method position()=game.at(22,12) method image()="corazon.png"}
 
-object elixir1{
+object elixir1 {
+	
 	method position()=game.at(23,12)
 	
 	method image()="corazon1.png"
@@ -81,7 +50,8 @@ object elixir1{
 	method teEncontro(donal) {}
 }
 
-object elixir2{
+object elixir2 {
+	
 	method position()=game.at(23,12)
 	
 	method image()="corazon2.png"
@@ -89,7 +59,8 @@ object elixir2{
 	method teEncontro(donal) {}
 }
 	
-object elixir3{
+object elixir3 {
+	
 	method position()=game.at(22,12)
 	
 	method image()="corazon1.png"
@@ -97,7 +68,8 @@ object elixir3{
 	method teEncontro(donal) {}
 }
 	
-object elixir4{
+object elixir4 {
+	
 	method position()=game.at(22,12)
 	
 	method image()="corazon2.png"
@@ -105,79 +77,46 @@ object elixir4{
 	method teEncontro(donal) {}
 }
 
-object cifra0{
-	method teEncontro(donal) {}
+object cifra0 inherits CambiarEstado  {
 	
 	method image()= string.nume(donal.dinero(),0) + '.png'
 	
 	method position()=game.at(21,11)
-	
-	method aparecer(){
-		game.addVisual(self)
-	}
-	
-	method desaparecer(){
-		game.removeVisual(self)
-	}
+
 }
 
-object cifra1{
-	method teEncontro(donal) {}
+object cifra1 inherits CambiarEstado {
 	
 	method image()= string.nume(donal.dinero(),1) + '.png'
 	
 	method position()=game.at(22,11)
-	
-	method aparecer(){
-		game.addVisual(self)
-	}
-	
-	method desaparecer(){
-		game.removeVisual(self)
-	}
+
 }
 
-object cifra2{
-	method teEncontro(donal) {}
+object cifra2 inherits CambiarEstado {
 	
 	method image()= string.nume(donal.dinero(),2) + '.png'
 	
 	method position()=game.at(23,11)
-	
-	method aparecer(){
-		game.addVisual(self)
-	}
-	
-	method desaparecer(){
-		game.removeVisual(self)
-	}
 }
 
-object cifra3{
-	method teEncontro(donal) {}
+object cifra3 inherits CambiarEstado {
 	
 	method image()= string.nume(donal.dinero(),3) + '.png'
 	
 	method position()=game.at(24,11)
-	
-	method aparecer(){
-		game.addVisual(self)
-	}
-	
-	method desaparecer(){
-		game.removeVisual(self)
-	}
 }
 
 object signoPeso{
-	method teEncontro(donal) {}
 	
 	method image()="dolar.png"
 	
 	method position()=game.at(20,11)
+	
+	method teEncontro(donal) {}
 }
 
-object string{ 
+object string { //INTENTAR CAMBIAR
 	var numeString=''
 	
 	method nume(numero,cifra){ //2

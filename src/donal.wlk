@@ -5,19 +5,13 @@ import extras.*
 object donal { 
 	
     var property position = game.at(10,10)
+    var property image = "donalsito.png"	
+    
     var property dinero = 0
     var property vida = 3
     var property elixir = 0
     var property cuarentena=false
-    
-    method image() {
-   		return 
-   			if (self.position().y()==0)  
-				"donalsito-rojo.png"
-			else
-		   	 	"donalsito.png"	
-    } 
-    
+     
     method move(nuevaPosicion) {
         self.position(nuevaPosicion)
     }

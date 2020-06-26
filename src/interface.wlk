@@ -35,11 +35,17 @@ object fin{
 	}
 }
 
-object vida1 inherits CambiarEstado  {method position()=game.at(24,12) method image()="corazon.png"}
+object vida1 inherits CambiarEstado  {
+	method position()=game.at(24,12) method image()="corazon.png"
+}
 
-object vida2 inherits CambiarEstado  {method position()=game.at(23,12) method image()="corazon.png"}
+object vida2 inherits CambiarEstado  {
+	method position()=game.at(23,12) method image()="corazon.png"
+}
 
-object vida3 inherits CambiarEstado  {method position()=game.at(22,12) method image()="corazon.png"}
+object vida3 inherits CambiarEstado  {
+	method position()=game.at(22,12) method image()="corazon.png"
+}
 
 object elixir1 {
 	

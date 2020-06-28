@@ -2,13 +2,14 @@ import wollok.game.*
 import interface.*
 import donal.*
 
+class Visual {var property position var property image}
+
 class DanDinero {method teEncontro(donal) {donal.ganarDinero(self)}}
 
 class SacanDinero {method teEncontro(donal) {donal.quitarDinero(self)}}
 
 class Mortales {
-	 
-	  method teEncontro(donal) {
+	 method teEncontro(donal) {
           game.removeTickEvent("GRAVEDAD")
           game.addVisual(fin)}
 }
@@ -27,16 +28,12 @@ class Cuarentena {
 }
 
 object jon inherits Mortales { 
-	
-     method image() = "jon.png" 
-     
-     method position() = game.at(donal.position().x().min(25),0)
+	var property image = "jon.png" 
+	method position() = game.at(donal.position().x().min(25),0)
 }
 
-object bomba inherits Mortales { 
-	
-     method image() = "bomba1.png"
-     
+object bomba inherits Mortales { 	
+     var property image = "bombaDer.png"
      method position() = game.at(donal.position().x().min(24),12)
  }
 

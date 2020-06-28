@@ -15,10 +15,14 @@ object config {
     		keyboard.left().onPressDo { if (!donal.cuarentena() and  (!game.hasVisual(fin)))  {
     			donal.move(donal.position().left(1))
     			donal.image("donalsitoIzq.png")
+    			jon.image("jonIzq.png")
+    			bomba.image("bomba1.png")
     		} }
     		keyboard.right().onPressDo {if (!donal.cuarentena() and  (!game.hasVisual(fin)))  {
     			donal.move(donal.position().right(1))
     			donal.image("donalsito.png")
+    			jon.image("jon.png")
+    			bomba.image("bombaDer.png")
     		} }
     		keyboard.y().onPressDo{ if (game.hasVisual(fin)) {fin.continuar()} }
     		keyboard.n().onPressDo{ if (game.hasVisual(fin)) {donal.terminar()} }

@@ -18,7 +18,7 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
   2) ![](https://i.ibb.co/r49HMV6/africanos-Que-Bailan1.png)
   Ten cuidado al pasar por Africa perderas el elixir que tengas acumulado para una nueva vida.
   3) ![](https://i.ibb.co/QPQ0wbH/coronavirus.png)
-  Si tocas al coronavirus pierdes 1 vida.
+  Si tocas al virus pierdes 1 vida.
   4) ![](https://i.ibb.co/12k28XF/chino2.png) ![](https://i.ibb.co/x2HGzX3/coreano.png)
   No te fies de los chinos, te pueden robar.
   5) ![](https://i.ibb.co/WB9FcV5/alberto.png)
@@ -45,11 +45,13 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
 
 Autores: Franco Hilt, Nazareno Grieco, Evelyn Kesler, Hernan Prego, Lautaro Suarez.
 
-Docente/Curso/Institución: Lucas Spigariol / Paradigmas de Programación / UTN - FRD
+Docentes: Lucas Spigariol, Juan Bono, Miguel Cames.
+
+Curso/Institución: Paradigmas de Programación / UTN - FRD
 
 Versión de wollok: 1.9.2
 
-Fecha: 06/2020
+Fecha: 07/2020
 
 
 

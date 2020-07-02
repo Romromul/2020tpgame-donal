@@ -2,7 +2,6 @@ import wollok.game.*
 import interface.*
 import donal.*
 
-class Visual {var property position var property image}
 
 class DanDinero {method teEncontro() {donal.ganarDinero(self)}}
 

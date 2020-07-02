@@ -72,48 +72,20 @@ object vida3 inherits CambiarEstado {
 
 }
 
-object elixir1 {
-
-	method position() = game.at(23, 12)
-
-	method image() = "corazon1.png"
-
-	method teEncontro() {}
-
+class Elixir {
+	var property position 
+	var property image
+	method teEncontro()
 }
 
-object elixir2 {
+const elixir1 = new Elixir(position=game.at(23, 12),image="corazon1.png")
 
-	method position() = game.at(23, 12)
+const elixir2 = new Elixir(position=game.at(23, 12),image="corazon2.png")
 
-	method image() = "corazon2.png"
+const elixir3 = new Elixir(position=game.at(22, 12),image="corazon1.png")
 
-	method teEncontro() {
-	}
+const elixir4 = new Elixir(position=game.at(22, 12),image="corazon2.png")
 
-}
-
-object elixir3 {
-
-	method position() = game.at(22, 12)
-
-	method image() = "corazon1.png"
-
-	method teEncontro() {
-	}
-
-}
-
-object elixir4 {
-
-	method position() = game.at(22, 12)
-
-	method image() = "corazon2.png"
-
-	method teEncontro() {
-	}
-
-}
 
 object cifra0 inherits CambiarEstado {
 

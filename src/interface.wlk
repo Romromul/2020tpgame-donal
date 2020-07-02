@@ -12,7 +12,7 @@ class CambiarEstado {
 		game.removeVisual(self)
 	}
 
-	method teEncontro(donal) {
+	method teEncontro() {
 	}
 
 }
@@ -78,8 +78,7 @@ object elixir1 {
 
 	method image() = "corazon1.png"
 
-	method teEncontro(donal) {
-	}
+	method teEncontro() {}
 
 }
 
@@ -89,7 +88,7 @@ object elixir2 {
 
 	method image() = "corazon2.png"
 
-	method teEncontro(donal) {
+	method teEncontro() {
 	}
 
 }
@@ -100,7 +99,7 @@ object elixir3 {
 
 	method image() = "corazon1.png"
 
-	method teEncontro(donal) {
+	method teEncontro() {
 	}
 
 }
@@ -111,7 +110,7 @@ object elixir4 {
 
 	method image() = "corazon2.png"
 
-	method teEncontro(donal) {
+	method teEncontro() {
 	}
 
 }
@@ -154,8 +153,7 @@ object signoPeso {
 
 	method position() = game.at(20, 11)
 
-	method teEncontro(donal) {
-	}
+	method teEncontro() {}
 
 }
 

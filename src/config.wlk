@@ -39,7 +39,7 @@ object config {
 	}
 
 	method colisiones() {
-		game.onCollideDo(donal, { algo => algo.teEncontro(donal)})
+		game.onCollideDo(donal, { algo => algo.teEncontro()})
 		game.onTick(700, "GRAVEDAD", { donal.caer(1)})
 		game.schedule(1000, { game.sound("ambiente.mp3").play()
 			game.onTick(149000, "musica", { game.sound("ambiente.mp3").play()})

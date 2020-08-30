@@ -8,15 +8,15 @@ El juego se basa en un personaje llamado "Donal" que va montado en su paloma azu
 
 ### Instrucciones: 
 Mueve a Donal con las flechas de tu teclado para recorrer el mundo.
-Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán perder. Por suerte tendrás un médico que te dará elixir:
+Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán perder. Por suerte tendrás un médico:
 
-![](https://i.ibb.co/CKvLJmh/doctor.png) x3 = 1 vida extra (Lo máximo son 3 vidas)
+![](https://i.ibb.co/CKvLJmh/doctor.png) x2 = vida extra (Lo máximo son 3 vidas)
 
 ### Obstáculos / Personajes:
   1) ![](https://i.ibb.co/dJ5KcLQ/bomba1.png)
   Si subes mucho te puedes cruzar con la bomba y explotaras.
   2) ![](https://i.ibb.co/r49HMV6/africanos-Que-Bailan1.png)
-  Ten cuidado al pasar por Africa perderas el elixir que tengas acumulado para una nueva vida.
+  Ten cuidado al pasar por Africa perderas una vida.
   3) ![](https://i.ibb.co/QPQ0wbH/coronavirus.png)
   Si tocas al virus pierdes 1 vida.
   4) ![](https://i.ibb.co/12k28XF/chino2.png) ![](https://i.ibb.co/x2HGzX3/coreano.png)
@@ -26,15 +26,15 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
   6) ![](https://i.ibb.co/ScyW6ct/angela-Merkel.png)
   Ten cuidado Angela te dejara sin dólares.
   7) ![](https://i.ibb.co/YkKjRKx/bolsonaro.png)
-  Si tocas a Bolsonaro te dará 30 dólares extra (Puede aparecer hasta 2 veces)
+  Si tocas a Bolsonaro te dará 10 dólares extra (Puede aparecer hasta 2 veces)
   8) ![](https://i.ibb.co/n6DNQXN/muro-EEUUy-MEX.png)
   Ten cuidado al pasar por la frontera de EE.UU - México te puedes dar contra un muro.
   9) ![](https://i.ibb.co/m66pWNQ/putin.png)
   Ten cuidado al pasar por Rusia puedes perder una vida al cruzarte con Putin.
   10) ![](https://i.ibb.co/CmCYZ6s/torre-trump.png)
-  Si pasas por la torre de dará 30 dólares extra (Solo aparece una vez)
+  Si pasas por la torre de dará 10 dólares extra (Solo aparece una vez)
   11) ![](https://i.ibb.co/M593vVx/britanico.png)
-  Si tocas al británico de la suerte te dará 30 dólares extra (Puede aparecer hasta 2 veces)
+  Si tocas al británico de la suerte te dará 10 dólares extra (Puede aparecer hasta 2 veces)
   12) ![](https://i.ibb.co/hVvkRGm/jon.png)
   Si bajas demasiado Jon te puede atrapar. Por suerte se le rompió sus propulsores y solo se puede mover por la parte inferior en línea recta.
  

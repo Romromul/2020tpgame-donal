@@ -2,7 +2,7 @@ import wollok.game.*
 import interface.*
 import donal.*
 
-class Personaje {
+class Visual {
 
 	var property position
 	var property image
@@ -12,20 +12,24 @@ class Personaje {
 
 }
 
-class DanDinero inherits Personaje {
+class DanDinero inherits Visual {
 
-	var property dineroQueLeOtorga = 22
+	var property dineroQueLeOtorga = 200
 
 	override method teEncontro() {
-		donal.ganarDinero(self)
+		self.comprobarSiGana()
+		self.darDinero()
 	}
 
-	method aparecer() {
-		game.addVisual(self)
-	}
-
-	method desaparecer() {
+	method darDinero() {
+		donal.dinero((donal.dinero() + self.dineroQueLeOtorga()).min(999))
 		game.removeVisual(self)
+	}
+
+	method comprobarSiGana() {
+		if ((donal.dinero() + self.dineroQueLeOtorga()) >= 999) {
+			fin.finDelJuego()
+		}
 	}
 
 }
@@ -42,29 +46,33 @@ object britanico inherits DanDinero (position = new Position(x = 11, y = 8), ima
 
 }
 
-class SacanDinero inherits Personaje {
+class QuitanDinero inherits Visual {
 
 	var property dineroQueLeQuita = 10
 
 	override method teEncontro() {
-		donal.quitarDinero(self)
+		self.quitarDinero()
+	}
+
+	method quitarDinero() {
+		donal.dinero((donal.dinero() - self.dineroQueLeQuita()).max(0))
+		game.say(self, "Has perdido dolares")
 	}
 
 }
 
-object coreano inherits SacanDinero (position = new Position(x = 19, y = 6), image = "coreano.png") {
+object coreano inherits QuitanDinero (position = new Position(x = 19, y = 6), image = "coreano.png") {
 
 }
 
-object chino inherits SacanDinero (position = new Position(x = 19, y = 8), image = "chino2.png") {
+object chino inherits QuitanDinero (position = new Position(x = 19, y = 8), image = "chino2.png") {
 
 }
 
-class Mortal inherits Personaje {
+class Mortal inherits Visual {
 
 	override method teEncontro() {
-		game.removeTickEvent("GRAVEDAD")
-		game.addVisual(fin)
+		fin.finDelJuego()
 	}
 
 }
@@ -72,14 +80,16 @@ class Mortal inherits Personaje {
 object jon inherits Mortal (image = "jon.png") {
 
 	override method position() = new Position(x = donal.position().x().min(25), y = 0)
+
 }
 
 object bomba inherits Mortal (image = "bombaDer.png") {
 
 	override method position() = new Position(x = donal.position().x().min(24), y = 12)
+
 }
 
-class Paralizador inherits Personaje {
+class Paralizador inherits Visual {
 
 	const tiempo
 
@@ -108,17 +118,33 @@ object dolar inherits DanDinero (position = new Position(x = 1, y = 1), image = 
 	}
 
 	override method teEncontro() {
+		self.comprobarSiGana()
 		donal.colisionarCon(self)
+		self.mover()
 	}
 
 }
 
-class QuitanVida inherits Personaje {
+class QuitanVida inherits Visual {
 
 	method vidaQueleSaca() = 1
 
 	override method teEncontro() {
-		donal.quitarVida(self)
+		self.quitarVida()
+	}
+
+	method quitarVida() { // VER
+		donal.vidas(donal.vidas() - self.vidaQueleSaca())
+		if (self == 'putin') {
+			game.say(putin, "SUERTE PARA LA PROXIMA")
+		} else {
+			game.say(self, "PERDISTE UNA VIDA, CUIDADO")
+			coronavirus.mover()
+		}
+		if (donal.vidas() <= 0) {
+			game.removeTickEvent("GRAVEDAD")
+			game.addVisual(fin)
+		}
 	}
 
 }
@@ -141,7 +167,7 @@ object coronavirus inherits QuitanVida (position = new Position(x = 9, y = 9), i
 
 }
 
-object doctor inherits Personaje (position = new Position(x = 7, y = 7), image = "doctor.png") {
+object doctor inherits Visual (position = new Position(x = 7, y = 7), image = "doctor.png") {
 
 	method mover() {
 		const x = 1.randomUpTo(game.width()).truncate(2)
@@ -165,11 +191,10 @@ object doctor inherits Personaje (position = new Position(x = 7, y = 7), image =
 
 }
 
-object angela inherits Personaje (position = new Position(x = 12, y = 7), image = "angelaMerkel.png") {
+object angela inherits Visual (position = new Position(x = 12, y = 7), image = "angelaMerkel.png") {
 
 	override method teEncontro() {
 		donal.dinero(0)
 	}
 
 }
-

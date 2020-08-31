@@ -31,7 +31,6 @@ class DanDinero inherits Visual {
 			fin.finDelJuego()
 		}
 	}
-
 }
 
 object torreTrump inherits DanDinero (position = new Position(x = 4, y = 6), image = "torre_trump.png") {

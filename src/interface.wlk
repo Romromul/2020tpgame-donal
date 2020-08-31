@@ -2,26 +2,25 @@ import donal.*
 import wollok.game.*
 import extras.*
 
-object fin {
+object fin inherits Visual(position = new Position(x = 8, y = 1)) {
 
-	method position() = game.at(8, 1)
-
-	method image() = 'fin.png'
+	override method image() {
+		if (donal.dinero() >= 999) return 'win.png' else return 'fin.png'
+	}
 
 	method continuar() {
 		game.onTick(700, "GRAVEDAD", { donal.caer(1)})
 		donal.vidas(3)
 		donal.dinero(0)
 		donal.position(game.at(10, 10))
-
 		if (!game.hasVisual(torreTrump)) {
-			torreTrump.aparecer()
+			game.addVisual(torreTrump)
 		}
 		if (!game.hasVisual(bolsonaro)) {
-			bolsonaro.aparecer()
+			game.addVisual(bolsonaro)
 		}
 		if (!game.hasVisual(britanico)) {
-			britanico.aparecer()
+			game.addVisual(britanico)
 		}
 		dolar.position(game.at(1, 1))
 		coronavirus.position(game.at(9, 9))
@@ -29,49 +28,50 @@ object fin {
 		game.removeVisual(self)
 	}
 
+	method terminar() {
+		game.schedule(2000, { game.stop()})
+	}
+
+	method finDelJuego() {
+		game.removeTickEvent("GRAVEDAD")
+		game.addVisual(self)
+	}
+
 }
 
-object vida { 
+object vida {
 
 	method image() = "corazon" + donal.vidas().toString() + ".png"
 
 	method position() = game.at(22, 12)
-	
-	method teEncontro() {}
+
+	method teEncontro() {
+	}
+
 }
 
-object unidad {
+object unidad inherits Visual (position = new Position(x = 24, y = 11)) {
 
-	method image() = self.u().toString() + ".png"
+	override method image() = (donal.dinero() - (donal.dinero() / 10).truncate(0) * 10).toString() + ".png"
 
-	method position() = game.at(24, 11)
-
-	method teEncontro() {}
-	
-	method u() = (donal.dinero() - (donal.dinero()/10).truncate(0)*10)
-	
 }
 
-object decena {
+object decena inherits Visual (position = new Position(x = 23, y = 11)) {
 
-	method image() = if (donal.dinero()>=100)
-						{(((donal.dinero() - centena.c()*100)/10).truncate(0)).toString() + ".png"}
-					else {(donal.dinero()/10).truncate(0).toString() + ".png"}
-	
-	method position() = game.at(23, 11)
+	override method image() = if (donal.dinero() >= 100) {
+		(((donal.dinero() - centena.c() * 100) / 10).truncate(0)).toString() + ".png"
+	} else {
+		(donal.dinero() / 10).truncate(0).toString() + ".png"
+	}
 
-	method teEncontro() {}
 }
 
-object centena {
+object centena inherits Visual (position = new Position(x = 22, y = 11)) {
 
-	method image() = self.c().toString() + ".png"
+	override method image() = self.c().toString() + ".png"
 
-	method position() = game.at(22, 11)
-
-	method teEncontro() {}
-	
 	method c() = (donal.dinero() / 100).truncate(0)
+
 }
 
 object signoPeso {
@@ -80,7 +80,7 @@ object signoPeso {
 
 	method position() = game.at(21, 11)
 
-	method teEncontro() {}
+	method teEncontro() {
+	}
 
 }
-

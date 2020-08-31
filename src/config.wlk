@@ -33,7 +33,7 @@ object config {
 			}
 		}
 		keyboard.n().onPressDo{ if (game.hasVisual(fin)) {
-				donal.terminar()
+				fin.terminar()
 			}
 		}
 	}

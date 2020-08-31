@@ -5,7 +5,7 @@ import extras.*
 import config.*
 
 program donalGame {
-	// PANTALLA
+		// PANTALLA
 	game.title('Donal y sus dolaritos')
 	game.width(25)
 	game.height(13)

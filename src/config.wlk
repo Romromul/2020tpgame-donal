@@ -18,13 +18,13 @@ object config {
 				donal.move(donal.position().left(1))
 				donal.image("donalsitoIzq.png")
 				jon.image("jonIzq.png")
-				bomba.image("bomba1.png")
+				bomba.image("bombaIzq.png")
 			}
 		}
 		keyboard.right().onPressDo{ if (!donal.estatico() and (!game.hasVisual(fin))) {
 				donal.move(donal.position().right(1))
-				donal.image("donalsito.png")
-				jon.image("jon.png")
+				donal.image("donalsitoDer.png")
+				jon.image("jonDer.png")
 				bomba.image("bombaDer.png")
 			}
 		}
@@ -40,7 +40,7 @@ object config {
 
 	method colisiones() {
 		game.onCollideDo(donal, { unPersonaje => unPersonaje.teEncontro()})
-		game.onTick(700, "GRAVEDAD", { donal.caer(1)})
+		game.onTick(500, "GRAVEDAD", {donal.caer()})
 		game.schedule(1000, { game.sound("ambiente.mp3").play()
 		game.onTick(149000, "musica", { game.sound("ambiente.mp3").play()})
 		})

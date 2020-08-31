@@ -7,14 +7,18 @@ class Visual {
 	var property position
 	var property image
 
-	method teEncontro() {
-	}
+	method teEncontro() {}
 
+	method mover() {
+		const x = 1.randomUpTo(game.width()).truncate(0)
+		const y = 1.randomUpTo(game.height() - 1).truncate(0)
+		position = game.at(x, y)
+	}	
 }
 
 class DanDinero inherits Visual {
 
-	var property dineroQueLeOtorga = 200
+	var property dineroQueLeOtorga 
 
 	override method teEncontro() {
 		self.comprobarSiGana()
@@ -33,21 +37,27 @@ class DanDinero inherits Visual {
 	}
 }
 
-object torreTrump inherits DanDinero (position = new Position(x = 4, y = 6), image = "torre_trump.png") {
+object torreTrump inherits DanDinero (
+	position = new Position(x = 4, y = 6), 
+	image = "torre_trump.png",
+	dineroQueLeOtorga = 100
+	) {}
 
-}
+object bolsonaro inherits DanDinero (
+	position = new Position(x = 8, y = 4), 
+	image = "bolsonaro.png",
+	dineroQueLeOtorga = 25
+	) {}
 
-object bolsonaro inherits DanDinero (position = new Position(x = 8, y = 4), image = "bolsonaro.png") {
-
-}
-
-object britanico inherits DanDinero (position = new Position(x = 11, y = 8), image = "britanico.png") {
-
-}
+object britanico inherits DanDinero (
+	position = new Position(x = 11, y = 8), 
+	image = "britanico.png",
+	dineroQueLeOtorga = 50
+	) {}
 
 class QuitanDinero inherits Visual {
 
-	var property dineroQueLeQuita = 10
+	var property dineroQueLeQuita = 25
 
 	override method teEncontro() {
 		self.quitarDinero()
@@ -64,7 +74,7 @@ object coreano inherits QuitanDinero (position = new Position(x = 19, y = 6), im
 
 }
 
-object chino inherits QuitanDinero (position = new Position(x = 19, y = 8), image = "chino2.png") {
+object chino inherits QuitanDinero (position = new Position(x = 19, y = 8), image = "chino.png") {
 
 }
 
@@ -76,7 +86,7 @@ class Mortal inherits Visual {
 
 }
 
-object jon inherits Mortal (image = "jon.png") {
+object jon inherits Mortal (image = "jonDer.png") {
 
 	override method position() = new Position(x = donal.position().x().min(25), y = 0)
 
@@ -100,21 +110,21 @@ class Paralizador inherits Visual {
 
 }
 
-object muro inherits Paralizador (position = new Position(x = 5, y = 5), image = "muroEEUUyMEX.png", tiempo = 5000) {
+object muro inherits Paralizador (position = new Position(x = 5, y = 5), image = "muro.png", tiempo = 3000) {
 
 }
 
-object alberto inherits Paralizador (position = new Position(x = 8, y = 2), image = "alberto.png", tiempo = 3000) {
+object alberto inherits Paralizador (position = new Position(x = 8, y = 2), image = "alberto.png", tiempo = 2000) {
 
 }
 
-object dolar inherits DanDinero (position = new Position(x = 1, y = 1), image = "dolarr.png") {
+object dolar inherits DanDinero (
+	position = new Position(x = 1, y = 1), 
+	image = "dolar.png",
+	dineroQueLeOtorga = 10
+) {
 
-	method mover() {
-		const x = 1.randomUpTo(game.width().min(24)).truncate(0)
-		const y = 1.randomUpTo(game.height().min(12)).truncate(0)
-		position = game.at(x, y)
-	}
+
 
 	override method teEncontro() {
 		self.comprobarSiGana()
@@ -126,21 +136,16 @@ object dolar inherits DanDinero (position = new Position(x = 1, y = 1), image = 
 
 class QuitanVida inherits Visual {
 
-	method vidaQueleSaca() = 1
 
 	override method teEncontro() {
 		self.quitarVida()
 	}
 
-	method quitarVida() { // VER
-		donal.vidas(donal.vidas() - self.vidaQueleSaca())
-		if (self == 'putin') {
-			game.say(putin, "SUERTE PARA LA PROXIMA")
-		} else {
-			game.say(self, "PERDISTE UNA VIDA, CUIDADO")
-			coronavirus.mover()
-		}
-		if (donal.vidas() <= 0) {
+	method quitarVida() { 
+		donal.vidas(donal.vidas() - 1)
+		game.say(self,"PERDISTE UNA VIDA, CUIDADO")
+
+		if (donal.vidas() == 0) {
 			game.removeTickEvent("GRAVEDAD")
 			game.addVisual(fin)
 		}
@@ -152,34 +157,27 @@ object putin inherits QuitanVida (position = new Position(x = 15, y = 8), image 
 
 }
 
-object africanosBailarines inherits QuitanVida (position = new Position(x = 13, y = 5), image = "africanosQueBailan1.png") {
+object africanosBailarines inherits QuitanVida (position = new Position(x = 13, y = 5), image = "africanos.png") {
 
 }
 
 object coronavirus inherits QuitanVida (position = new Position(x = 9, y = 9), image = "coronavirus.png") {
 
-	method mover() {
-		const x = 1.randomUpTo(game.width()).truncate(0)
-		const y = 1.randomUpTo(game.height() - 1).truncate(0)
-		position = game.at(x, y)
+	override method teEncontro() {
+		self.quitarVida()
+		self.mover()
 	}
 
 }
 
 object doctor inherits Visual (position = new Position(x = 7, y = 7), image = "doctor.png") {
-
-	method mover() {
-		const x = 1.randomUpTo(game.width()).truncate(2)
-		const y = 1.randomUpTo(game.height() - 1).truncate(2)
-		position = game.at(x, y)
-	}
-
+	
 	method darVida() {
 		if (donal.vidas() < 3) {
 			donal.vidas(donal.vidas() + 0.5)
-			game.say(self, "ganaste vida")
+			game.say(self, "Ganaste vida")
 		} else {
-			game.say(self, "Tenes más vida que Mirtha")
+			game.say(self, "No podes tener mas de 3 vidas")
 		}
 		self.mover()
 	}

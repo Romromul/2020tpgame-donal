@@ -37,23 +37,23 @@ class DanDinero inherits Visual {
 	}
 }
 
-object torreTrump inherits DanDinero (
+const torreTrump = new DanDinero (
 	position = new Position(x = 4, y = 6), 
 	image = "torre_trump.png",
 	dineroQueLeOtorga = 100
-	) {}
+	)
 
-object bolsonaro inherits DanDinero (
+const bolsonaro  = new DanDinero (
 	position = new Position(x = 8, y = 4), 
 	image = "bolsonaro.png",
 	dineroQueLeOtorga = 25
-	) {}
+	)
 
-object britanico inherits DanDinero (
+const britanico = new DanDinero (
 	position = new Position(x = 11, y = 8), 
 	image = "britanico.png",
 	dineroQueLeOtorga = 50
-	) {}
+	) 
 
 class QuitanDinero inherits Visual {
 
@@ -70,13 +70,9 @@ class QuitanDinero inherits Visual {
 
 }
 
-object coreano inherits QuitanDinero (position = new Position(x = 19, y = 6), image = "coreano.png") {
+const coreano = new QuitanDinero (position = new Position(x = 19, y = 6), image = "coreano.png")
 
-}
-
-object chino inherits QuitanDinero (position = new Position(x = 19, y = 8), image = "chino.png") {
-
-}
+const chino = new QuitanDinero (position = new Position(x = 19, y = 8), image = "chino.png") 
 
 class Mortal inherits Visual {
 
@@ -110,13 +106,9 @@ class Paralizador inherits Visual {
 
 }
 
-object muro inherits Paralizador (position = new Position(x = 5, y = 5), image = "muro.png", tiempo = 3000) {
+const muro = new Paralizador (position = new Position(x = 5, y = 5), image = "muro.png", tiempo = 3000) 
 
-}
-
-object alberto inherits Paralizador (position = new Position(x = 8, y = 2), image = "alberto.png", tiempo = 2000) {
-
-}
+const alberto = new Paralizador (position = new Position(x = 8, y = 2), image = "alberto.png", tiempo = 2000)
 
 object dolar inherits DanDinero (
 	position = new Position(x = 1, y = 1), 
@@ -153,13 +145,9 @@ class QuitanVida inherits Visual {
 
 }
 
-object putin inherits QuitanVida (position = new Position(x = 15, y = 8), image = "putin.png") {
+const putin = new QuitanVida (position = new Position(x = 15, y = 8), image = "putin.png")
 
-}
-
-object africanosBailarines inherits QuitanVida (position = new Position(x = 13, y = 5), image = "africanos.png") {
-
-}
+const africanosBailarines = new QuitanVida (position = new Position(x = 13, y = 5), image = "africanos.png")
 
 object coronavirus inherits QuitanVida (position = new Position(x = 9, y = 9), image = "coronavirus.png") {
 

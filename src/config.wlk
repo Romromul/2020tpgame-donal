@@ -6,26 +6,26 @@ import donal.*
 object config {
 
 	method configuracionDeTeclas() {
-		keyboard.up().onPressDo{ if (!donal.estatico() and (!game.hasVisual(fin))) {
+		keyboard.up().onPressDo{ if (donal.moverse()) {
 				donal.move(donal.position().up(1))
 			}
 		}
-		keyboard.down().onPressDo{ if (!donal.estatico() and (!game.hasVisual(fin))) {
+		keyboard.down().onPressDo{ if (donal.moverse()) {
 				donal.move(donal.position().down(1))
 			}
 		}
-		keyboard.left().onPressDo{ if (!donal.estatico() and (!game.hasVisual(fin))) {
+		keyboard.left().onPressDo{ if (donal.moverse()) {
 				donal.move(donal.position().left(1))
-				donal.image("donalsitoIzq.png")
-				jon.image("jonIzq.png")
-				bomba.image("bombaIzq.png")
+				donal.direccion("Izq")
+				jon.direccion("Izq")
+				bomba.direccion("Izq")
 			}
 		}
-		keyboard.right().onPressDo{ if (!donal.estatico() and (!game.hasVisual(fin))) {
+		keyboard.right().onPressDo{ if (donal.moverse()) {
 				donal.move(donal.position().right(1))
-				donal.image("donalsitoDer.png")
-				jon.image("jonDer.png")
-				bomba.image("bombaDer.png")
+				donal.direccion("Der")
+				jon.direccion("Der")
+				bomba.direccion("Der")
 			}
 		}
 		keyboard.y().onPressDo{ if (game.hasVisual(fin)) {

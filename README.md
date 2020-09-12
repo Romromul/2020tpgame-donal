@@ -35,6 +35,7 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
   Si pasas por la torre de dará 100 dólares extra (solo aparece una vez).
   11) ![](https://i.ibb.co/M593vVx/britanico.png)
   Si tocas al británico de la suerte te dará 50 dólares extra (solo aparece una vez).
+  
   12)![](https://i.ibb.co/k39t1fS/canguros.png)
   Si tocas a los Canguros de la fortuna te dará 50 dólares extra (solo aparece una vez).
   13) ![](https://i.ibb.co/hVvkRGm/jon.png)

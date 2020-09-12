@@ -35,7 +35,9 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
   Si pasas por la torre de dará 100 dólares extra (solo aparece una vez).
   11) ![](https://i.ibb.co/M593vVx/britanico.png)
   Si tocas al británico de la suerte te dará 50 dólares extra (solo aparece una vez).
-  12) ![](https://i.ibb.co/hVvkRGm/jon.png)
+  12)![](https://i.ibb.co/k39t1fS/canguros.png)
+   Si tocas a los Canguros de la fortuna te dará 50 dólares extra (solo aparece una vez).
+  13) ![](https://i.ibb.co/hVvkRGm/jon.png)
   Si bajas demasiado Jon te puede atrapar. Por suerte se le rompió sus propulsores y solo se puede mover por la parte inferior en línea recta.
  
  *Nota:* Al volar estarás sometido al efecto de la Gravedad así que no te asustes si empiezas a descender, trata de mantenerte arriba.

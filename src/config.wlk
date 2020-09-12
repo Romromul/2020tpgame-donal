@@ -36,9 +36,9 @@ object config {
 				fin.terminar()
 			}
 		}
-		keyboard.p().onPressDo { (pausa.inicio())		
+		keyboard.p().onPressDo { if (!donal.estatico()) {pausa.inicio()}	
 		}
-		keyboard.space().onPressDo { (pausa.quitar())
+		keyboard.space().onPressDo {if (donal.estatico()) (pausa.quitar())
 		}
 	}
 

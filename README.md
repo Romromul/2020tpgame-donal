@@ -38,6 +38,7 @@ Al iniciar contaras con 3 vidas, pero habrá ciertos obstáculos que te harán p
   
   12)![](https://i.ibb.co/k39t1fS/canguros.png)
   Si tocas a los Canguros de la fortuna te dará 50 dólares extra (solo aparece una vez).
+  
   13) ![](https://i.ibb.co/hVvkRGm/jon.png)
   Si bajas demasiado Jon te puede atrapar. Por suerte se le rompió sus propulsores y solo se puede mover por la parte inferior en línea recta.
  

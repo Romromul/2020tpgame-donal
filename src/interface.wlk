@@ -12,7 +12,7 @@ object fin inherits Visual(position = new Position(x = 8, y = 1)) {
 	}
 
 	method continuar() {
-		game.onTick(700, "GRAVEDAD", {donal.caer()})
+		game.onTick(500, "GRAVEDAD", {donal.caer()})
 		donal.vidas(3)
 		donal.dinero(0)
 		donal.position(game.at(10, 10))
@@ -40,6 +40,21 @@ object fin inherits Visual(position = new Position(x = 8, y = 1)) {
 		game.addVisual(self)
 	}
 
+}
+
+object pausa inherits Visual(position = new Position(x=0,y=0), image = "pausa.png") { 
+	method inicio() {
+		donal.estatico(true)
+		donal.caer()
+		game.removeTickEvent("GRAVEDAD")
+		game.addVisual(self)
+	}
+	
+	method quitar(){
+		donal.estatico(false)	
+		game.removeVisual(self)
+		game.onTick(500, "GRAVEDAD", {donal.caer()})
+	}
 }
 
 object vida inherits Visual(position = new Position(x=22,y=12)) { 

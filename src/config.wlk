@@ -36,6 +36,10 @@ object config {
 				fin.terminar()
 			}
 		}
+		keyboard.p().onPressDo { (pausa.inicio())		
+		}
+		keyboard.space().onPressDo { (pausa.quitar())
+		}
 	}
 
 	method colisiones() {

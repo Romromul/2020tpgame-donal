@@ -46,6 +46,8 @@ const bolsonaro = new DanDinero(position = new Position(x = 8, y = 4), image = "
 
 const britanico = new DanDinero(position = new Position(x = 11, y = 8), image = "britanico.png", dineroQueLeOtorga = 50)
 
+const canguro = new DanDinero(position = new Position(x = 20, y = 3), image = "canguros.png", dineroQueLeOtorga = 50)
+
 class QuitanDinero inherits Visual {
 
 	var property dineroQueLeQuita = 25

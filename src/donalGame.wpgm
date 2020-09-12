@@ -33,6 +33,7 @@ program donalGame {
 	game.addVisual(torreTrump)
 	game.addVisual(britanico)
 	game.addVisual(bolsonaro)
+	game.addVisual(canguro)
 		// CONFIGURACIONES
 	config.configuracionDeTeclas()
 	config.colisiones()
